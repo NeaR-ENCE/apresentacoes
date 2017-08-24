@@ -1,0 +1,189 @@
+---
+title: "Estudos Avançados em R"
+subtitle: Integração de bases e sistemas, Visualização de dados, Text Mining e Web-Scrapping
+output:
+  ioslides_presentation:
+    fig_caption: yes
+    highlight: kate
+    logo: NearL1.png
+    smaller: yes
+    transition: slower
+    widescreen: yes
+  beamer_presentation:
+    highlight: kate
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## ![0.3cm](NearL.png)
+
+### O **Núcleo de Estudos Avançados em** $R$  
+
+- Grupo de pesquisa recém formado na ENCE
+
+- Tem como finalidade aprofundar o domínio das ferramentas mais atuais para manipulação, análise e visualização de dados utilizando o software $R$
+
+- Contribuições propostas: 
+    + qualificação do corpo discente 
+    + desenvolvimento de documentação de ferramentas mais atuais de análise de dados
+    + melhoria das atividades de ensino e pesquisa da ENCE
+
+\ 
+    
+- Atualmente o NeaR é composto por 6 professores da graduação em Estatística.
+
+
+
+## ![0.3cm](LR.png)
+- O sofware $R$ (R Core Team, 2014) é uma linguagem e um ambiente de código aberto para computação estatística e gráfica 
+
+\ 
+
+- O $R$ permite aos seus usuários criar novas funcionalidades por meio de uma linguagem simples e integrada com outras linguagens, como C, C++ e Fortran
+
+\ 
+
+- Uma das grandes vantagens do uso do $R$ para análise de dados é a sua possibilidade de extensão via $pacotes$.
+```{r, eval=F}
+# Grande parte desenvolvida por pesquisadores e usuários do $R$, os quais permitem um link direto entre os mais recentes avanços em tecnologia, modelagem e computação e os usuários desta plataforma.
+
+```
+
+##  Motivação
+
+```{r, out.width = "450px", echo=FALSE,fig.align='center'}
+knitr::include_graphics("RMarkdownOutputFormats.png")
+```
+
+
+
+##  Motivação
+
+```{r, out.width = "800px", echo=FALSE,fig.align='center'}
+knitr::include_graphics("Captela.png")
+```
+
+
+##  Motivação
+```{r, echo=F , warning=FALSE, cache=FALSE, message=F,fig.align='center'}
+#wd <- "D:/Users/1932531/Documents/ProjetoIC/Projeto/2017/NeaR/Apresentacao"
+#setwd(wd)
+
+library(ggplot2)
+library(haven)
+require(plotly)
+ov <- data.frame(read_dta("ov2017long.dta"))
+df <- data.frame( table(ov$musica), Nota1=tapply(ov$Nota1,factor(ov$music), mean),
+                  Nota2=tapply(ov$Nota2,factor(ov$music), mean), Prioridade= tapply(ov$prioridade,factor(ov$music), mean))
+df$Musica <- df$Var1
+p <- plot_ly(df, x = ~Nota1, y = ~Nota2, text = ~Musica, type = 'scatter', mode = 'markers',
+             size = ~(Prioridade ), color = ~Musica, colors = 'Paired',
+             marker = list(opacity = 0.5, sizemode = 'diameter')) %>%
+  layout(title = 'Gosta (x) vs Sabe (y)',
+         xaxis = list(showgrid = FALSE, title= "Gosta"),
+         yaxis = list(showgrid = FALSE, title= "Sabe"),
+         showlegend = T)
+p
+```
+
+##  Motivação
+```{r, out.width = "550px", echo=FALSE,fig.align='center'}
+knitr::include_graphics("Mig.png")
+```
+
+##  Motivação
+```{r, out.width = "550px", echo=FALSE,fig.align='center'}
+knitr::include_graphics("nuvem_near.png")
+```
+
+```{r, message=F, warning=F, cache=FALSE}
+#library(wordcloud)
+#near <- read.table("D:/Alinne/NEAR/Apresentação/near.csv",sep=";", header=T)
+#wordcloud(near$word, near$freq,min.freq=1)
+```
+
+
+## Projetos propostos pelo NeaR
+
+
+\ 
+
+###**1 - Integração de bases e sistemas**
+
+> Gustavo Ferreira e Maria Luíza Toledo
+
+
+\ 
+
+### **2 - Visualização de Dados**
+    
+> Larissa Alves e Gustavo Rocha 
+
+\ 
+
+### **3 - Text Mining e Web-Scrapping**
+
+> Alinne Veiga e Renata Bueno
+
+
+## Projeto 1: Integração de bases e sistemas
+
+### Objetivo
+* Aprofundar os estudos das ferramentas existentes para integração do software $R$ com diferentes bases e sistemas:
+    + processamento na nuvem
+    + integração de bases de dados e softwares para análise
+    + diferentes formas de apresentação de relatórios de pesquisa.
+
+
+## Projeto 2: Visualização de Dados
+
+### Objetivo
+* Aprofundar os estudos das ferramentas existentes para apresentação visual de dados utilizando o $R$: 
+    + abordar alternativas atraentes para a exploração dinâmica de dados  
+    + explorar a criação de aplicações via web  
+    + gerar documentos em vários formatos através $R$.
+
+
+## Projeto 3: Text Mining e Web-Scrapping
+
+### Objetivo
+* Aprofundar os estudos em *web scrapping* e *text mining* utilizando o software $R$ através do \(RStudio\):
+    + extração de dados em formato texto de páginas da internet: sites e blogs
+    + criação de arquivos de metadados
+    + análise de textos como `data.frame` (informações textuais) possibilitando então visualização e sumarização.
+
+
+## Atividades do bolsista
+
+```{r, out.width = "550px", echo=FALSE,fig.align='center'}
+knitr::include_graphics("nuvem_atividades.png")
+```
+
+## Perfil que Buscamos
+
+### Alunos que:
+
+   + tenham interesse em estudar e aprender
+   + gostem de programação
+   + gostem de trabalhar em equipe
+   + tenham dedicação e compromisso.
+
+## Todos Juntos
+
+
+* Casos reais discutidos no âmbito do NeaR poderão ser utilizados para implementação de códigos e criação de exemplos para posterior documentação. 
+
+* O NeaR prevê ainda a troca de conhecimentos entre participantes dos três projetos, por meio da realização de Seminários e encontros periódicos na ENCE.
+
+
+## Contatos
+
+### Gustavo Ferreira (gustavo.ferreira@ibge.gov.br, sala 405)
+### Larissa Alves ( larissa.alves@ibge.gov.br, sala 407)
+### Alinne Veiga (alinne.veiga@ibge.gov.br, sala 503-b)
+
+
+
+
