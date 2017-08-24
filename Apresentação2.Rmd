@@ -1,0 +1,80 @@
+---
+title: "Estudos Avançados em R"
+subtitle: Integração de bases e sistemas, Visualização de dados, Text Mining e Web-Scrapping
+output:
+  ioslides_presentation:
+    fig_caption: yes
+    highlight: kate
+    logo: NearL1.png
+    smaller: yes
+    transition: slower
+    widescreen: yes
+  beamer_presentation:
+    highlight: kate
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## ![0.3cm](NearL.png)
+
+O NeaR (Núcleo de Estudos Avançados em R) consiste em um grupo de pesquisa que tem como finalidade aprofundar o domínio das ferramentas mais atuais para manipulação, analise e visualização de dados utilizando o software R.
+
+\
+
+Projetos:
+
+  + Integração de bases e sistemas
+  + Visualização de dados
+  + Text Mining
+
+
+## Projeto 1: Integração de bases e sistemas
+
+### Objetivo
+* Aprofundar os estudos das ferramentas existentes para integração do software $R$ com diferentes bases e sistemas: 
+    + Organização e apresentação de dados (ver Tidyr, DT)
+    + Formatos de entrada e saída de dados (html, tabelas, spss, word, beamer, pdf,...)
+    + Agregar dados e mapas de forma dinâmica (ver Leaftlet, GoogleVis)
+    + Armazenamento e processamento na nuvem
+    + Formas de documentação e emissão de relatórios dinâmicos (ver Markdown, Sweave, Knitr, Shiny (?),...)
+
+## Projeto 2: Visualização de Dados
+
+### Objetivo
+* Aprofundar os estudos das ferramentas existentes para apresentação visual de dados utilizando o $R$: 
+    + abordar alternativas atraentes para a exploração dinâmica de dados (ver ggplot, ggplot2, ...)  
+    + explorar a criação de aplicações via web (ver Shiny, ...)   
+    + gerar documentos em vários formatos através $R$. (ver Markdown, Sweave, Knitr, ...)
+
+
+## Projeto 3: Text Mining e Web-Scrapping
+
+### Objetivo
+* Aprofundar os estudos em *web scrapping* e *text mining* utilizando o software $R$ através do \(RStudio\):
+    + extração de dados em formato texto de páginas da internet: sites e blogs 
+    + criação de arquivos de metadados 
+    + análise de textos como `data.frame` (informações textuais) possibilitando então visualização e sumarização 
+    + Pacotes: rvest, tidytext, tm, SnowballC, plyr, dplyr,stringr, fpc, RColorBrewer, ...
+    
+
+## Cronograma   
+
+```{r, out.width = "1000px", echo=FALSE,fig.align='center'}
+knitr::include_graphics("Cronograma.png")
+```
+
+## Primeiros passos
+
+### Explorar fontes de informação:
++ https://www.r-bloggers.com/
++ http://curso-r.com/
++ https://www.rstudio.com/
+
+### Para a próxima reunião (24/08)
++ Reportar avanços no formato de uma apresentação usando o Rmarkdown
++ Github
+
+
+
